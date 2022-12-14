@@ -32,11 +32,31 @@ function hide(x, y) {
 		if (pages[i].id == y){
 			pages[i].style.display = "block";
 			buttons[i].classList.add("active");
+			if (y == "search-box"){
+				document.getElementById("search-box-github").style.display = "block";
+				document.getElementById("search-box-website").style.display = "block";
+			}
+			else if (y == "policy-check"){
+				document.getElementById("policy-check-github").style.display = "block";
+			}
+			else if (y == "dli-migration"){
+				document.getElementById("dli-migration-github").style.display = "block";
+			}
 		}
 		else{
 			pages[i].style.display = "none";
 			if (buttons[i].classList.contains("active")){
 				buttons[i].classList.remove("active");
+				if (pages[i].id == "search-box"){
+				document.getElementById("search-box-github").style.display = "none";
+				document.getElementById("search-box-website").style.display = "none";
+				}
+				else if (pages[i].id == "policy-check"){
+					document.getElementById("policy-check-github").style.display = "none";
+				}
+				else if (pages[i].id == "dli-migration"){
+					document.getElementById("dli-migration-github").style.display = "none";
+				}
 			}
 		}
 	}
